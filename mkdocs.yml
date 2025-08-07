@@ -1,0 +1,40 @@
+site_name: ensi # Altere para o nome do seu projeto
+repo_url: https://github.com/SEU-USUARIO/SEU-REPOSITORIO # Altere para o URL do seu repositório
+repo_name: SEU-USUARIO/SEU-REPOSITORIO # Altere para o nome do seu repositório (usuário/repositório)
+edit_uri: tree/main/docs # Normalmente a branch principal é 'main', não 'master'. Verifique no seu repositório.
+
+theme:
+  name: material
+  language: pt-BR
+  logo: assets/logo.png
+  favicon: assets/logo.png
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.tasklist
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
+
+watch:
+  - ensi # Aponte para a pasta principal do seu código Python, que é 'ensi' neste caso
+
+plugins:
+- macros
+-  mkdocstrings:
+    handlers:
+      python:
+        paths: [ensi] # Aponte para a pasta do seu código para que o mkdocstrings leia os docstrings
+
+extra:
+  commands:
+    run: poetry run ensi # Atualize o comando para executar o seu projeto
