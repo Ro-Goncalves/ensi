@@ -1,40 +1,54 @@
-site_name: ensi # Altere para o nome do seu projeto
-repo_url: https://github.com/SEU-USUARIO/SEU-REPOSITORIO # Altere para o URL do seu repositório
-repo_name: SEU-USUARIO/SEU-REPOSITORIO # Altere para o nome do seu repositório (usuário/repositório)
-edit_uri: tree/main/docs # Normalmente a branch principal é 'main', não 'master'. Verifique no seu repositório.
+# Nome do site que aparece no topo da documentação
+site_name: ensi
 
+# URL do repositório GitHub (aparece no canto superior direito do tema)
+repo_url: https://github.com/Ro-Goncalves/ensi
+
+# Nome que será exibido no botão/ícone do repositório
+repo_name: ro-goncalves/ensi
+
+# Caminho para a edição rápida dos arquivos no GitHub (relativo ao repo_url)
+# "tree/master/docs" significa que o botão "Editar" levará para a pasta docs no branch master
+edit_uri: tree/master/docs
+
+# Configurações do tema visual
 theme:
-  name: material
-  language: pt-BR
-  logo: assets/logo.png
-  favicon: assets/logo.png
+  name: material           # Usa o tema Material for MkDocs
+  language: pt-BR          # Idioma da interface do tema
+  logo: assets/logo.png    # Caminho para o logo exibido na barra superior
+  favicon: assets/logo.png # Ícone que aparece na aba do navegador
 
+# Extensões do Markdown usadas pelo MkDocs
 markdown_extensions:
-  - attr_list
-  - admonition
-  - pymdownx.tasklist
-  - pymdownx.superfences:
+  - attr_list             # Permite adicionar atributos HTML diretamente no Markdown
+  - admonition            # Permite criar blocos de destaque (nota, aviso, etc.)
+  - pymdownx.tasklist     # Listas de tarefas (checkboxes) no Markdown
+  - pymdownx.superfences: # Suporte a blocos de código avançados e customizados
       custom_fences:
-        - name: mermaid
+        - name: mermaid   # Suporte ao Mermaid.js para diagramas
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+          format: pymdownx.superfences.fence_code_format # Formata o código usando a função padrão do pymdownx
+  - pymdownx.emoji:       # Suporte a emojis
+      emoji_index: materialx.emoji.twemoji   # Usa o índice de emojis do Material
+      emoji_generator: materialx.emoji.to_svg # Gera emojis como SVG para melhor qualidade
 
+# CSS extra para customização visual do tema
 extra_css:
   - stylesheets/extra.css
 
+# Monitoramento de alterações — inclui a pasta 'ensi' no watch do servidor mkdocs serve
 watch:
-  - ensi # Aponte para a pasta principal do seu código Python, que é 'ensi' neste caso
+  - ensi # Pasta principal do código Python, útil para recarregar docs quando o código muda
 
+# Lista de plugins habilitados
 plugins:
-- macros
--  mkdocstrings:
-    handlers:
-      python:
-        paths: [ensi] # Aponte para a pasta do seu código para que o mkdocstrings leia os docstrings
+  - macros                # Permite criar macros e variáveis reutilizáveis nos arquivos Markdown
+  - mkdocstrings:         # Gera documentação automaticamente a partir de docstrings do código
+      handlers:
+        python:
+          paths: [ensi]   # Caminho para o código Python a ser documentado
 
+# Configurações extras que podem ser usadas no tema ou em macros
 extra:
   commands:
-    run: poetry run ensi # Atualize o comando para executar o seu projeto
+    run: poetry run ensi  # Comando para rodar o projeto diretamente (mostrado na doc, se desejado)
