@@ -13,7 +13,7 @@ edit_uri: tree/master/docs
 
 # Configurações do tema visual
 theme:
-  name: material           # Usa o tema Material for MkDocs
+  name: readthedocs        # Temas disponiveis no readthedocs: mkdocs, readthedocs
   language: pt-BR          # Idioma da interface do tema
   logo: assets/logo.png    # Caminho para o logo exibido na barra superior
   favicon: assets/logo.png # Ícone que aparece na aba do navegador
