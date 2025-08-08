@@ -14,8 +14,9 @@ build:
   tools:
     python: "3.11"
   jobs:
-    pre_install:
+    post_create_environment:
       - pip install poetry
       - poetry config virtualenvs.create false
+    post_install:
       - poetry install --only doc
         
