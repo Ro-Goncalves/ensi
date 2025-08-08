@@ -28,9 +28,9 @@ markdown_extensions:
         - name: mermaid   # Suporte ao Mermaid.js para diagramas
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format # Formata o código usando a função padrão do pymdownx
-  # - pymdownx.emoji:       # Suporte a emojis
-  #     emoji_index: !!python/name:material.extensions.emoji.twemoji   # Usa o índice de emojis do Material
-  #     emoji_generator: !!python/name:material.extensions.emoji.to_svg # Gera emojis como SVG para melhor qualidade
+  - pymdownx.emoji:       # Suporte a emojis
+      emoji_index: !!python/name:material.extensions.emoji.twemoji   # Usa o índice de emojis do Material
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg # Gera emojis como SVG para melhor qualidade
 
 # CSS extra para customização visual do tema
 extra_css:
