@@ -29,7 +29,7 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format # Formata o código usando a função padrão do pymdownx
   - pymdownx.emoji:       # Suporte a emojis
-      emoji_index: !!python/name:materialx.extensions.emoji.twemoji   # Usa o índice de emojis do Material
+      emoji_index: !!python/name:materialx.emoji.twemoji   # Usa o índice de emojis do Material
       emoji_generator: !!python/name:materialx.emoji.to_svg # Gera emojis como SVG para melhor qualidade
 
 # CSS extra para customização visual do tema
